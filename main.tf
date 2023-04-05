@@ -65,6 +65,9 @@ resource "aws_iam_role_policy_attachment" "cluster_eks_vpc_policy" {
   role       = aws_iam_role.main.name
 }
 
+
+
+
 resource "aws_eks_cluster" "main" {
   name     = local.cluster_name
   role_arn = aws_iam_role.main.arn
@@ -73,6 +76,7 @@ resource "aws_eks_cluster" "main" {
     endpoint_public_access = true
     public_access_cidrs = ["0.0.0.0/0"]
   }
+
 
 }
 
