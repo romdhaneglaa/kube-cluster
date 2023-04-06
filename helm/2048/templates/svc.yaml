@@ -12,3 +12,4 @@ spec:
   selector:
     app: app-2048
   type: LoadBalancer
+  
