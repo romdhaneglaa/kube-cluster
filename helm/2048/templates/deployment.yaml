@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-2048
+  name: app-2048
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-2048
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: app-2048
+    spec:
+      containers:
+        - image: alexwhen/docker-2048
+          name: docker-2048
+          resources: {}
+
+
