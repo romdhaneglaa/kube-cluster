@@ -80,9 +80,6 @@ module "eks" {
   iam_role_arn   = aws_iam_role.main2.arn
   cluster_addons = {
     aws-ebs-csi-driver = {
-      #      service_account_role_arn = "arn:aws:iam::${data.aws_caller_identity.main.account_id}:role/${local.name_cluster}-ebs-csi-controller"
-      #      addon_version = "v1.13.0-eksbuild.2"
-      #      resolve_conflicts="PRESERVE"
       service_account_role_arn = module.ebs_csi_irsa_role.iam_role_arn
       most_recent              = true
     }
