@@ -88,16 +88,15 @@ module "eks" {
     }
   }
   eks_managed_node_groups = {
-    test = {
-      min_size       = 1
-      max_size       = 2
-      desired_size   = 1
-      instance_types = ["t3.micro"]
-      capacity_type  = "SPOT"
+    test3 = {
+      min_size       = 2
+      max_size       = 10
+      desired_size   = 5
+      instance_types = ["t3.large"]
+
     }
   }
   cluster_endpoint_public_access       = true
   cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]
-
 
 }
