@@ -10,6 +10,7 @@ resource "kubernetes_manifest" "secret_mysql_pass" {
       namespace = "default"
     }
   }
+  provider = kubernetes
 }
 
 resource "kubernetes_manifest" "persistentvolumeclaim_mysql_pv_claim" {
